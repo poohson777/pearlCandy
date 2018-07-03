@@ -29,7 +29,7 @@
 		 
 		 />
 		
-		<security:logout invalidate-session="true" logout-success-url="/board/list" />
+		<security:logout invalidate-session="true" logout-success-url="/home" />
 
 		<security:remember-me key="jr01" token-validity-seconds="3600" data-source-ref="dataSource" />
 

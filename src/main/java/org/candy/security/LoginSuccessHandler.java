@@ -34,14 +34,14 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 				if(roleNames.contains("ROLE_ADMIN")) {
 					
 					log.info("adminzzzzzz");
-					res.sendRedirect("/board/list");
+					res.sendRedirect("/home");
 					return;
 				}
 				
 				if(roleNames.contains("ROLE_USER")) {
 					log.info("userzzzzzzz~~~~~~~~~~~");
 					
-					res.sendRedirect("/board/list");
+					res.sendRedirect("/home");
 					return;
 				}
 				

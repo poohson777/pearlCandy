@@ -54,6 +54,11 @@ font-size: 13pt;
 button{
 height: 3rem;
 }
+
+.jbtnDiv{
+float: right;
+}
+
 /* body {
 	background-image: url(/resources/images/bg.jpg);
 } */
@@ -64,9 +69,9 @@ height: 3rem;
 	<!-- Header -->
 	<header id="header">
 		<div class="logo">
-			<a href="/board/list">
+			<a href="/home">
 			
-			<i class="fa fa-truck" ></i>  foodtruck </a>
+			<i class="fa fa-truck" ></i> Food Truck</a>
 		
 		</div>
 		<a href="#menu">Menu</a>
@@ -75,8 +80,10 @@ height: 3rem;
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="/board/list">Home</a></li>
+			<li><a href="/home">Home</a></li>
 			<li><a href="/up/ajax">Image gallery</a></li>
+			<li><a href="/board/list">Free Board</a></li>
+			<li><a href="/mypage">My page</a></li>
 		</ul>
 	</nav>
 
@@ -98,7 +105,7 @@ height: 3rem;
 		<div class="outer">
 			<div class="mytable">
 				<h3>Login</h3>
-
+			<div class="loginDiv">
 				<form action="/login" method="post">
 					<div class="row uniform">
 						<div class="uiduid"> 
@@ -109,19 +116,23 @@ height: 3rem;
 						PASSWORD<input type="text" name = "password">					
 						</div>
 
-					<div class="6u 12u$(small)">
+						<div class="6u 12u$(small)">
 							<input type="checkbox" id="copy" name="remember-me">
 						<label for="copy">remember-me</label>
 						</div>
 						<div class="12u$">
-							<ul class="actions">
+																								
+								<div class="actions">
+								<a href="/join"> <i class="fa fa-user" > join_us</i></a>
 								<button class="lbtn">login</button>								
 								<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
-							</ul>
+									 
+							</div>
 						</div>
 					</div>
 				</form>
 				<hr/>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -155,12 +166,13 @@ height: 3rem;
 	<script>
 	
 		$(document).ready(function(e) {
-			$(".actions").on("click", ".list", function(e) {
-				self.location = "/board/list${cri.makeSearch(cri.page)}";
-			});
-			
+						
 			$(".lbtn").on("click", function(e) {
 				self.location = "/index";
+			});
+			
+			$(".jbtn").on("click", function(e) {
+				self.location = "/join";
 			});
 			
 			var error = "${error}"

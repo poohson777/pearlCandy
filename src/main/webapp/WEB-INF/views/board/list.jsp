@@ -8,6 +8,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
+
 <head>
 <title>Hielo by TEMPLATED</title>
 <meta charset="utf-8" />
@@ -99,7 +100,6 @@ font-weight: bold;
 	width: 80%;
 }
 
-
 #header .logo .loginbtn{
 float: right;
 display: inline-block;
@@ -158,8 +158,10 @@ text-align: left;
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="/board/list">Home</a></li>
+			<li><a href="/home">Home</a></li>
 			<li><a href="/up/ajax">Image gallery</a></li>
+			<li><a href="/board/list">Free Board</a></li>
+			<li><a href="/mypage">My page</a></li>
 		</ul>
 	</nav>
 	<!-- One -->

@@ -79,16 +79,16 @@ public class LoginController {
 	}	
 	
 	@RequestMapping(value = "/idCheck", method = RequestMethod.POST)
-	public ResponseEntity<String> checkId(@RequestBody String mid) {
-		log.info("idCheck progress.... : " + mid);
-		int result = service.idcheck(mid);
+	public ResponseEntity<String> checkId(@RequestBody String uid) {
+		log.info("idCheck progress.... : " + uid);
+		int result = service.idcheck(uid);
 		log.info("result : " + result);
 		
 		ResponseEntity<String> entity = null;
 		
-		entity = new ResponseEntity<String>(Integer.toString(service.idcheck(mid)), HttpStatus.OK);
+		entity = new ResponseEntity<String>(Integer.toString(service.idcheck(uid)), HttpStatus.OK);
 		log.info("�븘�씠�뵒 泥댄겕 吏꾪뻾以�..................");
-		log.info("�븘�씠�뵒 泥댄겕 寃곌낵 : " + Integer.toString(service.idcheck(mid)));
+		log.info("�븘�씠�뵒 泥댄겕 寃곌낵 : " + Integer.toString(service.idcheck(uid)));
 		
 		return entity;
 	}

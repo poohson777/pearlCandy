@@ -256,8 +256,10 @@ text-align: center;
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="/board/list">Home</a></li>
+			<li><a href="/home">Home</a></li>
 			<li><a href="/up/ajax">Image gallery</a></li>
+			<li><a href="/board/list">Free Board</a></li>
+			<li><a href="/mypage">My page</a></li>
 			
 		</ul>
 	</nav>

@@ -47,19 +47,19 @@ padding: 6rem 0 15rem 0;
 	text-align: left;
 }
 
-.uidinput{
+.midinput{
 	width: 75%;
 }
-.uidCheck{
+.midCheck{
 	width: 25%;
 	margin-top: 27px;
 }
 
-.upwinput{
+.mpwinput{
 	width: 100%;
 }
 
-.unameinput{
+.mnameinput{
 	width: 100%;
 }
 
@@ -117,29 +117,25 @@ height: 3rem;
 	<div id="main" class="container">
 		<div class="outer">
 			<div class="mytable">
-				<h3>Join</h3>
+				<h3>Mypage</h3>
 
 				<form action="/join" method="post">
 					<div class="row uniform">
-						<div class="uidinput"> 
+						<div class="midinput"> 
 						ID<input type="text" name = "uid" size="100%" class="checkid">
 						</div>
 						
 						<div class="uidCheck">
 						<button class="idCheck">ID CHECK</button>
 						<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
-						</div>
+					</div>
 						
 						<div class="unameinput"> 
 					    Name<input type="text" name = "uname">	
 						</div>
 
 						<div class="upwinput">
-						PASSWORD<input type="text" name = "upw1">					
-						</div>
-						
-						<div class="upwConfirm">
-						PASSWORD confirm<input type="text" name = "upw2">					
+						PASSWORD<input type="text" name = "upw">					
 						</div>						
 				
 						<div class="emailinput">
@@ -215,19 +211,9 @@ height: 3rem;
         	$.ajaxSetup({
                 headers:
                 { 'X-CSRF-TOKEN':token }
-            });        	
-        }
-        
-        $(".jbtn").on("click",function(e){
+            });
         	
-        	var upw = document.getElementById("upw1").value; // 입력한 비밀번호
-        	var confirmUpw = document.getElementById("upw2").value; // 입력한 비밀번호 확인
-        	if(upw != confirmUpw){
-        		console.log("비밀번호 불일치")
-        		alert("입력한 비밀번호가 서로 다릅니다.")
-        		return false;
-        	}
-        });
+        }
         
 	
 		$(".idCheck").on("click",function(e){
@@ -275,7 +261,8 @@ height: 3rem;
 		if (msg == "joinFail") {
 			alert("회원가입에 실패했습니다. 아이디나 비밀번호를 확인하세요.");
 			}		
-	});		
+			
+	});
 	
 	function check_only(check){
 		   
@@ -284,12 +271,9 @@ height: 3rem;
 	       for(var i=0; i<obj.length; i++){
 	           if(obj[i] != check){
 	               obj[i].checked = false;
-	         
+	           }
 	       }	       
 	   }
-	}
-	
-	
 				
 	</script>
 		

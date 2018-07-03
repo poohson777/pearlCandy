@@ -106,6 +106,24 @@ text-align: center;
 /* border:1px solid #8a4680; */
 margin-top: 5px
 }
+
+#header .logo .loginbtn{
+float: right;
+display: inline-block;
+text-align: right;
+}
+
+#header .logo .loginbtn .logOutbtn .btnlogOut1{
+
+float: left;
+margin-right: 10px;
+
+}
+
+#header .logo .loginbtn .logOutbtn .btnlogOut2{
+display: inline-block;
+text-align: left;
+}
 </style>
 <body>
 
@@ -148,9 +166,10 @@ margin-top: 5px
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="/board/list">Home</a></li>
+			<li><a href="/home">Home</a></li>
 			<li><a href="/up/ajax">Best Food Truck</a></li>
 			<li><a href="/board/list">Free Board</a></li>
+			<li><a href="/mypage">My page</a></li>
 		</ul>
 		<br><br><br><br><br><br><br><br><br>
 		<ul>
@@ -259,170 +278,7 @@ margin-top: 5px
 					</div>
 				</div>
 
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/베가스타코0.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p style="font-size: 1.9em">베가스타코</p>
-								<h2>Closed</h2>
-							</header>
-							<p>오르차타 / 파히타 스테이크 타코 / 치킨브리또 / 불고기 타코 / 치즈 타코</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Read More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p>mattis elementum sapien pretium tellus</p>
-								<h2>퇴근</h2>
-							</header>
-							<p>Cras aliquet urna ut sapien tincidunt</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Learn More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p>mattis elementum sapien pretium tellus</p>
-								<h2>퇴근</h2>
-							</header>
-							<p>Cras aliquet urna ut sapien tincidunt</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Learn More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p>mattis elementum sapien pretium tellus</p>
-								<h2>퇴근</h2>
-							</header>
-							<p>Cras aliquet urna ut sapien tincidunt</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Learn More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p>mattis elementum sapien pretium tellus</p>
-								<h2>퇴근</h2>
-							</header>
-							<p>Cras aliquet urna ut sapien tincidunt</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Learn More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p>mattis elementum sapien pretium tellus</p>
-								<h2>퇴근</h2>
-							</header>
-							<p>Cras aliquet urna ut sapien tincidunt</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Learn More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/steakout.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p style="font-size: 1.9em">베가스타코</p>
-								<h2>Closed</h2>
-							</header>
-							<p>오르차타 / 파히타 스테이크 타코 / 치킨브리또 / 불고기 타코 / 치즈 타코</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Read More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/쿡스테이크0.jpg" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<p style="font-size: 1.9em">쿡스테이크</p>
-								<h2>Open</h2>
-							</header>
-							<p>스테이크 / 감자튀김 / 스테이크꼬치 / 콜라</p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Read More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="box">
-						<div class="image fit">
-							<img src="resources/images/foodtruck/허클베리핀0.jpg" alt="" />
-							<div style="text-align:right; margin-top:10px"> <!-- border-top:1px solid #999999 -->
-						<span style="color:black">&nbsp;review&nbsp;&nbsp;0&nbsp;</span>&nbsp;&nbsp;
-							<span style="color:red;">&nbsp;♥&nbsp;&nbsp;&nbsp;2&nbsp;</span>
-							</div>
-						</div>
-						<div class="content" style="margin:-1rem 2rem 0 2rem">
-							<header class="align-center">
-								<p style="font-size: 1.9em">허클베리핀</p>
-								<h2>Closed</h2>
-							</header>
-							<p> #랍스터쉬림프#탄두리쉬림프 </p>
-							<footer class="align-center">
-								<a href="/view" class="button alt">Read More</a>
-							</footer>
-						</div>
-					</div>
-				</div>
+				
 
 
 
@@ -466,9 +322,16 @@ margin-top: 5px
 		<div class="center">
 			<div class="pagination">
 
-				<a href=1>1</a> <a href=2>2</a> <a href=3>3</a> <a href=4>4</a> <a
-					href=5>5</a> <a href=6>6</a> <a href=7>7</a> <a href=8>8</a> <a
-					href=8>9</a> <a href=8>10</a> <a href=8>>></a>
+				<c:if test="${pm.prev}">
+						<a href="/home${cri.makeSearch(pm.start -1)}"><< </a>
+					</c:if>
+					<c:forEach begin="${pm.start}" end="${pm.end}" var="idx">
+						<a href="/home${cri.makeSearch(idx)}"
+							class="<c:if test="${pm.cri.page==idx}">active</c:if>">${idx}</a>
+					</c:forEach>
+					<c:if test="${pm.next}">
+						<a href="/home${cri.makeSearch(pm.end+1)}">>></a>
+					</c:if>
 			</div>
 		</div>
 		<!-- 페이징end -->
@@ -497,11 +360,6 @@ margin-top: 5px
 	<script src="/resources/js/skel.min.js"></script>
 	<script src="/resources/js/util.js"></script>
 	<script src="/resources/js/main.js"></script>
-	
-	
-
-
-
 
 </body>
 </html>
