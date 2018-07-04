@@ -29,7 +29,7 @@ padding: 6rem 0 15rem 0;
 	padding-top: 5%;
  	background-color: #ffffff; 
 	background-color: rgba(255, 255, 255, 0.6);
-	width: 100%;	
+	width: 100%;
 }
 
 .mytable {
@@ -79,6 +79,7 @@ height: 3rem;
 }
 
 
+
 </style>
 
 <body class="subpage">
@@ -115,27 +116,35 @@ height: 3rem;
 
 	<!-- Main -->
 	<div id="main" class="container">
-		<div class="outer">
+<div class="outer">
 			<div class="mytable">
-				<h3>Mypage</h3>
+			<h3>Mypage</h3>
+			
+		<div class="outer1">
+			<div class="mytable">
+				<h3>Profile</h3>
 
-				<form action="/join" method="post">
+			<form action="/join" method="post">
 					<div class="row uniform">
-						<div class="midinput"> 
+						<div class="uidinput"> 
 						ID<input type="text" name = "uid" size="100%" class="checkid">
 						</div>
 						
 						<div class="uidCheck">
 						<button class="idCheck">ID CHECK</button>
 						<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
-					</div>
+						</div>
 						
 						<div class="unameinput"> 
 					    Name<input type="text" name = "uname">	
 						</div>
 
 						<div class="upwinput">
-						PASSWORD<input type="text" name = "upw">					
+						PASSWORD<input type="text" name = "upw1">					
+						</div>
+						
+						<div class="upwConfirm">
+						PASSWORD confirm<input type="text" name = "upw2">					
 						</div>						
 				
 						<div class="emailinput">
@@ -146,30 +155,45 @@ height: 3rem;
 						Phone<input type="text" name = "phone_number">		
 						</div>
 						
-						<div class="6u 12u$(small)">
-							<input type="checkbox" id="owner" name="role" value="0" onclick="check_only(this)">
-						<label for="owner">사장</label>						
 						
-						    <input type="checkbox" id="consumer" name="role" value="1" onclick="check_only(this)">
-						<label for="consumer">고객</label>
+			
+			
+				<i class="fa fa-bell" ></i><h3>Keyword</h3>				
+				
+					<div class="row uniform">
+						<div class="keywordInput"> 
+						<input type="text" name = "keyword" size="100%">
 						</div>
-						
+												
+					</div>
+		
+		
+			<div class="mytable">
+				<i class="fa fa-compass" ></i><h3>Location</h3>
+
+					<div class="row uniform">
+						<div class="locationInput"> 
+						<input type="text" name = "location" size="100%">
+						</div>
+					</div>				
+				
+			</div>
 							
-						
 						<div class="12u$">
 							<ul class="actions">
 								<button class="jbtn">join</button>								
 								<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
 							</ul>
-						</div>
-					
+						</div>					
 					</div>
 				</form>
-	
+				
 				<hr/>
 			</div>
-		</div>
+		</div>		
 	</div>
+				</div>
+		</div>
 
 <!-- Footer -->
 	<footer id="footer">
@@ -200,80 +224,10 @@ height: 3rem;
 	
 	$(document).ready(function(e) {
 		
-		var idCheck =  false; 
-		var inputId = "";
-		var pattern = /^[가-힣0-9a-zA-Z]*$/;
-		
-		var csrfToken = "${_csrf.token}";
-
-        function setCsrf(token){
-        	
-        	$.ajaxSetup({
-                headers:
-                { 'X-CSRF-TOKEN':token }
-            });
-        	
-        }
-        
-	
-		$(".idCheck").on("click",function(e){
-			console.log("click...");
-			e.preventDefault();
-			var uid = $('.checkid').val();
-			console.log("uid1...",uid);
-			
-			if(pattern.test(uid) == false){
-				console.log("uid2..",pattern.test(uid));
-				alert("아이디는 한글,영문 및 숫자만 가능합니다");
-				return false;
-			}
-			if(uid == ""){
-				alert("아이디를 입력해주세요");
-				return false;
-			}
-			setCsrf(csrfToken);
-			
-			$.ajax({
-				type: 'POST',
-				url: "/idCheck",
-				dataType: "json",
-				contentType	:	"application/x-www-form-urlencoded; charset=UTF-8",
-		        headers : {
-		            "content-type" : "application/json",
-		            "x-http-method-override" : "POST"
-		          },
-				data : uid,
-				success: function(data){
-					if(data === 1){
-						alert("이미 존재하는 아이디입니다");
-					}
-					if(data === 0){
-						alert("사용 가능한 아이디입니다")
-						idCheck = true; //아이디 중복확인 한것 확인됬을 경우 true로 저장
-						inputId = uid;
-					}
-				}
-			});
-		});	
-		
-		var msg = '<c:out value="${msg}"/>';		
-
-		if (msg == "joinFail") {
-			alert("회원가입에 실패했습니다. 아이디나 비밀번호를 확인하세요.");
-			}		
-			
+				
 	});
 	
-	function check_only(check){
-		   
-	       var obj = document.getElementsByName("role");
-	       
-	       for(var i=0; i<obj.length; i++){
-	           if(obj[i] != check){
-	               obj[i].checked = false;
-	           }
-	       }	       
-	   }
+	
 				
 	</script>
 		

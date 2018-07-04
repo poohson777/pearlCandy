@@ -283,8 +283,7 @@ height: 3rem;
 	       
 	       for(var i=0; i<obj.length; i++){
 	           if(obj[i] != check){
-	               obj[i].checked = false;
-	         
+	               obj[i].checked = false;	         
 	       }	       
 	   }
 	}
