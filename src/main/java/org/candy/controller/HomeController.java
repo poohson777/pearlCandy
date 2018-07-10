@@ -64,4 +64,10 @@ public class HomeController {
 		
 	}
 	
+	@GetMapping("/keyword")
+	public void keyword(Locale locale, Model model) {
+		log.info("Get keyword");
+		
+	}
+	
 }

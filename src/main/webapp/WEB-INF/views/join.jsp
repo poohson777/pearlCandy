@@ -135,11 +135,11 @@ height: 3rem;
 						</div>
 
 						<div class="upwinput">
-						PASSWORD<input type="text" name = "upw1">					
+						PASSWORD<input type="text" name = "upw">					
 						</div>
 						
 						<div class="upwConfirm">
-						PASSWORD confirm<input type="text" name = "upw2">					
+						PASSWORD confirm<input type="text" name = "upw1">					
 						</div>						
 				
 						<div class="emailinput">
@@ -220,8 +220,8 @@ height: 3rem;
         
         $(".jbtn").on("click",function(e){
         	
-        	var upw = document.getElementById("upw1").value; // 입력한 비밀번호
-        	var confirmUpw = document.getElementById("upw2").value; // 입력한 비밀번호 확인
+        	var upw = document.getElementById("upw").value; // 입력한 비밀번호
+        	var confirmUpw = document.getElementById("upw1").value; // 입력한 비밀번호 확인
         	if(upw != confirmUpw){
         		console.log("비밀번호 불일치")
         		alert("입력한 비밀번호가 서로 다릅니다.")

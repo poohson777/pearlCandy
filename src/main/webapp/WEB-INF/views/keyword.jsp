@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.*" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,6 +30,7 @@ padding: 6rem 0 15rem 0;
  	background-color: #ffffff; 
 	background-color: rgba(255, 255, 255, 0.6);
 	width: 100%;
+	height: 350px
 }
 
 .mytable {
@@ -49,12 +48,19 @@ padding: 6rem 0 15rem 0;
 	text-align: left;
 }
 
+.midinput{
+	width: 75%;
+}
+.midCheck{
+	width: 25%;
+	margin-top: 27px;
+}
 
-.upwinput{
+.mpwinput{
 	width: 100%;
 }
 
-.upwConfirm{
+.mnameinput{
 	width: 100%;
 }
 
@@ -65,28 +71,29 @@ padding: 6rem 0 15rem 0;
 .phoneinput{
 	width: 100%;
 }
-
-#header .logo .loginbtn{
-float: right;
-display: inline-block;
-text-align: right;
+body div{
+font-size: 13pt;
 }
 
-#header .logo .loginbtn .logOutbtn .btnlogOut1{
+button{
+height: 3rem;
+}
 
+form{
+width: 315px;
+height: 183px;
+}
+
+.checkMenu1{
 float: left;
-margin-right: 10px;
-
+width: 150px;
+height: 200px;
 }
 
-#header .logo .loginbtn .logOutbtn .btnlogOut2{
-display: inline-block;
-text-align: left;
-margin-top: 10px;
-}
-
-.consumerInput{
-float: right;
+.checkMenu2{
+float: left;
+width: 150px;
+height: 200px;
 }
 
 
@@ -97,34 +104,8 @@ float: right;
 	<!-- Header -->
 	<header id="header">
 		<div class="logo">
-		
-		<div class="loginbtn">
-
-<sec:authorize access="isAnonymous()">
-	<form action="/myLogin">
-	<button>login</button>
-	
-	</form>	
-</sec:authorize>
-
-<div class="logOutbtn">
-<sec:authorize access="isAuthenticated()">
-	<form action="/logout" method="post" >
-	<sec:authentication property="principal" var="user"/>
-	<div class="btnlogOut1">
-	<strong>${user.username}</strong>님 <strong>(Consumer)</strong>
-	</div>
-	<div class="btnlogOut2">
-	<button class="lOutbtn">logout</button>
-	</div>
-	<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
-	</form>
-</sec:authorize>
-</div>
-
-		 </div>
+			<a href="/home"><i class="fa fa-truck" ></i>  Food Truck</a>
 		</div>
-
 		<a href="#menu">Menu</a>
 	</header>
 
@@ -139,65 +120,68 @@ float: right;
 	</nav>
 
 	<!-- One -->
-	<section id="One" class="wrapper style3">
-		<div class="inner">
-			<header class="align-center">
-				<p>WHAT DO YOU WANT TO EAT?</p>
-				<h2>FOOD TRUCK</h2>
-			</header>
-		</div>
-	</section>
 
 </head>
 
 	<!-- Main -->
 	<div id="main" class="container">
-	<div class="outer">
+<div class="outer">
 			<div class="mytable">
-			<i class="fa fa-edit" ></i> Edit Information			
-			
-						<div class="consumerInput">
-							<input type="checkbox" id="consumer" name="role" value="0" checked="checked">
-						<label for="consumer">고객</label>
-						</div>						    
+			<i class="fa fa-edit" ></i> Keyword Check
+			<hr>
+			<br>			
+
+			<form action="/join" method="post">					
+						
+						<div class="checkMenu1">
+							<input type="checkbox" id="steak" name="role" value="0" onclick="check_only(this)">
+						<label for="steak">스테이크</label>						
+						
+						    <input type="checkbox" id="yang" name="role" value="1" onclick="check_only(this)">
+						<label for="yang">양꼬치</label>
+						
+						<input type="checkbox" id="cake" name="role" value="2" onclick="check_only(this)">
+						<label for="cake">케익</label>
+						
+						<input type="checkbox" id="coffee" name="role" value="3" onclick="check_only(this)">
+						<label for="coffee">커피</label>
+						
+						<input type="checkbox" id="cocktail" name="role" value="4" onclick="check_only(this)">
+						<label for="cocktail">칵테일</label>
+						
+						</div>
+						
+						<div class="checkMenu2">
+						<input type="checkbox" id="taco" name="role" value="5" onclick="check_only(this)">
+						<label for="taco">타코야끼</label>
+						
+						<input type="checkbox" id="ssomak" name="role" value="5" onclick="check_only(this)">
+						<label for="ssomak">쏘맥</label>
+						
+						<input type="checkbox" id="chicken" name="role" value="5" onclick="check_only(this)">
+						<label for="chicken">닭강정</label>
+						
+						<input type="checkbox" id="hotdog" name="role" value="5" onclick="check_only(this)">
+						<label for="hotdog">핫도그</label>
+						
+						<input type="checkbox" id="gob" name="role" value="5" onclick="check_only(this)">
+						<label for="gob">곱창</label>
+						
+						</div>
 				
-			<hr>	
-			<br>
-			
-			<form action="/join" method="post">
-					<div class="row uniform">
-												
-						<div class="upwinput">
-						PASSWORD<input type="text" name = "upw1">					
-						</div>
-						
-						<div class="upwConfirm">
-						PASSWORD confirm<input type="text" name = "upw2">					
-						</div>				
-									
-						<div class="emailinput">
-						E-mail<input type="text" name= "email" value="lemoncandy@gmail.com"/>		
-						</div>	
-						
-						<div class="phoneinput">
-						Phone<input type="text" name = "phone_number" value="010-8797-4562"/>		
-						</div>
-						
-						
-						
 
 						<div class="12u$">
 							<ul class="actions">
-								<button class="rbtn">Keyword register</button>
-								<button class="jbtn">Modify</button>								
+								<button class="kbtn">Keyword register</button>
 								<input type="hidden" name = "${_csrf.parameterName}" value ="${_csrf.token}">
 							</ul>
 						</div>					
-					</div>
-				</form>					
-			</div>
-			<br>
-		
+					
+				</form>				
+					
+			
+			
+		</div>
 	</div>
 </div>
 
@@ -230,20 +214,24 @@ float: right;
 	
 	$(document).ready(function(e) {
 		
-		   var windowW = 900;  // 창의 가로 길이
-	       var windowH = 700;  // 창의 세로 길이
-	       var left = Math.ceil((window.screen.width - windowW)/2);
-	       var top = Math.ceil((window.screen.height - windowH)/2);
+		function check_only(check){
+			   
+		       var obj = document.getElementsByName("role");
+		       
+		       for(var i=0; i<obj.length; i++){
+		           if(obj[i] != check){
+		               obj[i].checked = false;	         
+		       }	       
+		   }
+		}	
 		
-		$(".rbtn").on("click", function(e){
+		$(".kbtn").on("click", function(){
 			
-			e.preventDefault();
-			
-			window.open("http://10.10.10.21:8080/keyword", "keywordInput", 
-					"toolbar=no, menubar=no, scrollbars=no, resizable=yes, l top="+
-					top+", left="+left+", height="+windowH+", width="+windowW);			
-			
-		});				
+			alert("키워드 등록이 완료되었습니다.");
+			window.close();
+		});
+		
+				
 	});
 	
 	
